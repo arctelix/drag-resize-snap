@@ -1,27 +1,7 @@
 # drag-resize-snap
 ### Provides the ability to drag, re-size, and snap any html element with pure javascript in only 6.37kb minified!
 
-I needed a micro library in pure javasctipt (no jQuery) for draging,  resizeing, and  snapping.  Found a great start [here] (http://codepen.io/zz85/post/resizing-moving-snapping-windows-with-js-css) and modified it as follows:
-
- * Added margin reduce when drag handle is clicked to avoid an un-snapable scenario.
- * Zero SNAP_MARGINS contribute to un-snapable scenario. Added some protection for this as well.
-Highly recommend SNAP_MARGIN of at lest 2 (5 id default), it provides same feel with less headache!
- * Added tipple click to center and resize, another safe guard for un-snapable scenario.
- * Separated DRAG_MARGINS and SNAP_MARGINS, thees need to be independent.
- * Reduced code redundancy by adding getBounds().
- * Added ability toggle pane bounds by percent of screen with convertUnits() & toggleUnits().
- * Allow multiple drag handles and multiple types: (HTMLElement, bounds(css coordinates), and preset strings).
- * Accept handle or array of mixed type handles at instantiation.
- * Auto detect HTMLElements as handles with class 'drag-area'.
- * Automatically create the ghostpane (never any reason to add it manually?).
- * Created some api features snapFullScreen(), restorePreSnap(), center().
- * Refactored canMove() to allow for customizable handle bounds.
- * Automatically append HTML element for bounds handles.
- * Refactored getHandleCoords() to allow for custom handle bounds & presets.
- * Allow for inner and outer resize margins for better reliability, especially with corners.
- * Allow for drag and resize with cursor hints when ele.style.pointer-events = "none".
- * Refactored Calc() to allow for outer margins.
- * Other tweaks...
+I needed a micro library in pure javasctipt (no jQuery) for draging,  resizeing, and  snapping.  Found a great start [here] (http://codepen.io/zz85/post/resizing-moving-snapping-windows-with-js-css) and heavily modified it to suite my needs:
  
 Check out the [DEMO](http://codepen.io/anon/pen/QjvKwB)
 
@@ -66,3 +46,27 @@ All options:
     // Apply the drag resize snap to your element
     
     var drs = makeDRS(pane, [handleOne , handleTwo], options)
+    
+    
+    
+Changes from original source to v 0.1:
+    
+* Added a margin reduce when drag handle is clicked to avoid an un-snapable scenario.
+* Zero SNAP_MARGINS contribute to un-snapable scenario. Added some protection for this as well.
+Highly recommend SNAP_MARGIN of at lest 2 (5 is default), it provides same feel with less headache!
+* Added tipple click to center and resize, another safe guard for un-snapable scenario.
+* Separated DRAG_MARGINS and SNAP_MARGINS, thees need to be independent.
+* Reduced code redundancy by adding getBounds().
+* Added ability toggle pane bounds by percent of screen with convertUnits() & toggleUnits().
+* Allow multiple drag handles and multiple types: (HTMLElement, bounds(css coordinates), and preset strings).
+* Accept handle or array of mixed type handles at instantiation.
+* Auto detect HTMLElements as handles with class 'drag-area'.
+* Automatically create the ghostpane (never any reason to add it manually?).
+* Created some api features snapFullScreen(), restorePreSnap(), center().
+* Refactored canMove() to allow for customizable handle bounds.
+* Automatically append HTML element for bounds handles.
+* Refactored getHandleCoords() to allow for custom handle bounds & presets.
+* Allow for inner and outer resize margins for better reliability, especially with corners.
+* Allow for drag and resize with cursor hints when ele.style.pointer-events = "none".
+* Refactored Calc() to allow for outer margins.
+* Other tweaks...
