@@ -23,6 +23,7 @@ Highly recommend SNAP_MARGIN of at lest 2 (5 id default), it provides same feel 
  * Refactored Calc() to allow for outer margins.
  * Other tweaks...
  
+Check out the [DEMO](http://codepen.io/anon/pen/QjvKwB)
 
 Simple config:
 
