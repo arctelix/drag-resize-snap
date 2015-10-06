@@ -1,7 +1,7 @@
 # drag-resize-snap
-### Provides the ability to drag, re-size, and snap any html element with pure javascript (no library required)
+### Provides the ability to drag, re-size, and snap any html element with pure javascript in only 6.37kb minified!
 
-After looking for a micro libaray for drag resize snap i found a great start [here] (http://codepen.io/zz85/post/resizing-moving-snapping-windows-with-js-css) and modified it as follows:
+I needed a micro library in pure javasctipt (no jQuery) for draging,  resizeing, and  snapping.  Found a great start [here] (http://codepen.io/zz85/post/resizing-moving-snapping-windows-with-js-css) and modified it as follows:
 
  * Added margin reduce when drag handle is clicked to avoid an un-snapable scenario.
  * Zero SNAP_MARGINS contribute to un-snapable scenario. Added some protection for this as well.
