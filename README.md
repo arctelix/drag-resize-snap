@@ -12,7 +12,7 @@ Simple config:
 
 All options:
 
-    // Get an Create an element to drag, resize, and snap
+    // Create an element to drag, resize, and snap
     var pane = document.getElementById('pane')
     
     // (optional) Create an HTMLElement to use as a drag handle.
