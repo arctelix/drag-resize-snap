@@ -3,7 +3,7 @@
 
 I needed a micro library in pure javasctipt (no jQuery) for draging,  resizeing, and  snapping.  Found a great start [here] (http://codepen.io/zz85/post/resizing-moving-snapping-windows-with-js-css) and heavily modified it to suite my needs:
  
-Check out the [DEMO](http://codepen.io/anon/pen/QjvKwB)
+Check out the [DEMO](http://codepen.io/arctelix/pen/RWVoMv)
 
 Simple config:
 
