@@ -82,7 +82,7 @@ core.util.DRS = function(){
  *		center: center
  *	}}
  *
- * @demo: http://codepen.io/anon/pen/QjvKwB
+ * @demo: http://codepen.io/arctelix/pen/RWVoMv
  *
  * @licence The MIT License (MIT)
  * @Copyright Copyright © 2015 Simplex Studio, LTD
@@ -130,7 +130,7 @@ var makeDRS = function(pane, handle, options){
 	// create ghostpane
 	var ghostpane = document.createElement('div')
 		ghostpane.id = "DRSghost"
-		ghostpane.style.opacity = "0"
+        	ghostpane.style.opacity = "0"
 		document.body.appendChild(ghostpane)
 
 	// Setup drag handles
@@ -273,7 +273,6 @@ var makeDRS = function(pane, handle, options){
 
 	function onMouseDown(e) {
 	  onDown(e);
-	  e.preventDefault();
 	}
 
 	function onDown(e) {
