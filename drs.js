@@ -130,7 +130,7 @@ var makeDRS = function(pane, handle, options){
 	// create ghostpane
 	var ghostpane = document.createElement('div')
 		ghostpane.id = "DRSghost"
-        	ghostpane.style.opacity = "0"
+		ghostpane.style.opacity = "0"
 		document.body.appendChild(ghostpane)
 
 	// Setup drag handles
