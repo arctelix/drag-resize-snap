@@ -5,7 +5,7 @@
     "arctelix <arctelix@gmail.com>"
   ],
   "description": "A lightweight means of adding drag, resize, and snap to an HTML element.",
-  "main": "dist/drs.js",
+  "main": "./dist/drs.js",
   "moduleType": [],
   "keywords": [
     "drag",
