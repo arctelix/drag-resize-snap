@@ -1,0 +1,25 @@
+{
+  "name": "drag-resize-snap",
+  "homepage": "https://github.com/arctelix/drag-resize-snap",
+  "authors": [
+    "arctelix <arctelix@gmail.com>"
+  ],
+  "description": "A lightweight means of adding drag, resize, and snap to an HTML element.",
+  "main": "dist/drs.js",
+  "moduleType": [],
+  "keywords": [
+    "drag",
+    "resize",
+    "snap",
+    "lightweight",
+    "micro"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
