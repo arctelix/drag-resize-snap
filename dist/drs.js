@@ -25,6 +25,7 @@ core.util.DRS = function(){
  * - Refactored Calc() to allow for outer margins.
  * - Other tweaks...
  *
+ * @version 0.1.1
  * @author Simplex Studio, LTD &
  * @author original source: http://codepen.io/zz85/post/resizing-moving-snapping-windows-with-js-css, https://github.com/zz85
  *
