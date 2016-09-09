@@ -1,16 +1,38 @@
-# drag-resize-snap
-### Provides the ability to drag, re-size, and snap any html element with pure javascript in only 6.37kb minified!
+## drag-resize-snap
 
-I needed a micro library in pure javasctipt (no jQuery) for draging,  resizeing, and  snapping.  Found a great start [here] (http://codepen.io/zz85/post/resizing-moving-snapping-windows-with-js-css) and heavily modified it to suite my needs:
+#### Provides the ability to drag, re-size, and snap any html element with pure javascript in only 6.37kb minified!
+
+I needed a micro library in pure javascript (no jQuery) for draging,  resizeing, and  snapping.  
+Found a great start [here](http://codepen.io/zz85/post/resizing-moving-snapping-windows-with-js-css) and heavily modified it to suite my needs:
  
 Check out the [DEMO](http://codepen.io/arctelix/pen/RWVoMv)
+
+#### installation:
+
+Manually add drs.js to your project directory or download with Bower:
+
+    bower install drag-resize-snap
+
+Add drs.js to your project HTML:
+
+    <script src="static/js/drs.js"></script>
+    
+Or use gitcdn:
+
+    <script src="https://cdn.gitcdn.link/repo/arctelix/drag-resize-snap/master/dist/drs.js"></script>
+
+NOTE: You can substitute `master` for a commit hash or version tag in your gitcdn urls
+
+    <script src="https://cdn.gitcdn.link/repo/arctelix/drag-resize-snap/v0.1.1/dist/drs.js"></script>
+
+#### Usage:
 
 Simple config:
 
     var pane = document.getElementById('pane')
-    var drs = makeDRS(pane)
+    var drs = core.util.DRS.makeDRS(pane)
 
-All options:
+Advanced config:
 
     // Create an element to drag, resize, and snap
     var pane = document.getElementById('pane')
@@ -45,11 +67,11 @@ All options:
     
     // Apply the drag resize snap to your element
     
-    var drs = makeDRS(pane, [handleOne , handleTwo], options)
+    var drs = core.util.DRS.makeDRS(pane, [handleOne , handleTwo], options)
     
+#### See docs for more
     
-    
-Changes from original source to v 0.1:
+Changes from original source to v0.1.1:
     
 * Added a margin reduce when drag handle is clicked to avoid an un-snapable scenario.
 * Zero SNAP_MARGINS contribute to un-snapable scenario. Added some protection for this as well.

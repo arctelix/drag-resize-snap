@@ -1,4 +1,32 @@
-/**
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: drs.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: drs.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
  * @namespace core
 **/
 var core = core || {};
@@ -15,7 +43,7 @@ core.util = core.util || {}
  * @description All DRS methods are available under this namespace.
  *
  * @version 0.1.1
- * @author Simplex Studio, LTD &
+ * @author Simplex Studio, LTD &amp;
  * @author original source: http://codepen.io/zz85/post/resizing-moving-snapping-windows-with-js-css, https://github.com/zz85
  *
  * @licence The MIT License (MIT)
@@ -38,7 +66,7 @@ core.util.DRS = function(){
 /**
  * @memberof core.util.DRS
  * @class
- * @classdesc Adds Drag Resize & Snap to any element.
+ * @classdesc Adds Drag Resize &amp; Snap to any element.
  *
  *
  * @param pane {HTMLElement} 	- The element to add drag, resize, snap.
@@ -53,11 +81,11 @@ core.util.DRS = function(){
  * @param options.resizeOuterM {number}	- (5) qty pixels outside pane bounds is dragable.
  * @param options.resizeInnerM {number}	- (8) qty pixels inside pane bounds is dragable.
  *
- * @example <caption>Basic usage:</caption>
+ * @example &lt;caption>Basic usage:&lt;/caption>
  * var pane = document.getElementById('pane')
  * var drs = core.util.DRS.makeDRS(pane)
  *
- * @example <caption>Advanced usage:</caption>
+ * @example &lt;caption>Advanced usage:&lt;/caption>
  * // Get an Create an element to drag, resize, and snap
  * var pane = document.getElementById('pane')
  *
@@ -186,7 +214,7 @@ var makeDRS = function(pane, handle, options){
 		var winW = window.innerWidth
 	    var winH = window.innerHeight
 		var bounds = []
-		if (b.top < SNAP_FS_MARGINS || b.left < SNAP_FS_MARGINS ||
+		if (b.top &lt; SNAP_FS_MARGINS || b.left &lt; SNAP_FS_MARGINS ||
 			b.right > winW - SNAP_FS_MARGINS || b.bottom > winH - SNAP_FS_MARGINS) {
 		  bounds = [0, 0, winW, winH]
 		} else if (leftScreenEdge) {
@@ -263,7 +291,7 @@ var makeDRS = function(pane, handle, options){
 
 	function onTouchMove(e) {
 	  onMove(e.touches[0]);
-	  if (clicked && (clicked.isMoving || clicked.isResizing)) {
+	  if (clicked &amp;&amp; (clicked.isMoving || clicked.isResizing)) {
 		  e.preventDefault()
 		  e.stopPropagation()
 	  }
@@ -290,7 +318,7 @@ var makeDRS = function(pane, handle, options){
 			w: b.width,
 			h: b.height,
 			isResizing: isResizing,
-			isMoving: !isResizing && canMove(),
+			isMoving: !isResizing &amp;&amp; canMove(),
 			onTopEdge: onTopEdge,
 			onLeftEdge: onLeftEdge,
 			onRightEdge: onRightEdge,
@@ -307,19 +335,19 @@ var makeDRS = function(pane, handle, options){
 			var xr = b.width - x
 
 			// determine bounds of click area coordinates
-			if (c.bottom !== null && c.bottom !== undefined)
-				r.bottom = yb < c.height || (!c.height && y > c.top) && yb > c.bottom && inLR
-			if (c.top !== null && c.top !== undefined)
-				r.top = y < c.height || (!c.height && yb > c.bottom) && y > c.top && inLR
-			if (c.right !== null && c.right !== undefined)
-				r.right = xr < c.width || (!c.width && x > c.left ) && xr > c.right && inTB
-			if (c.left !== null && c.left !== undefined)
-				r.left = x < c.width || (!c.width && xr > c.right ) && x > c.left && inTB
+			if (c.bottom !== null &amp;&amp; c.bottom !== undefined)
+				r.bottom = yb &lt; c.height || (!c.height &amp;&amp; y > c.top) &amp;&amp; yb > c.bottom &amp;&amp; inLR
+			if (c.top !== null &amp;&amp; c.top !== undefined)
+				r.top = y &lt; c.height || (!c.height &amp;&amp; yb > c.bottom) &amp;&amp; y > c.top &amp;&amp; inLR
+			if (c.right !== null &amp;&amp; c.right !== undefined)
+				r.right = xr &lt; c.width || (!c.width &amp;&amp; x > c.left ) &amp;&amp; xr > c.right &amp;&amp; inTB
+			if (c.left !== null &amp;&amp; c.left !== undefined)
+				r.left = x &lt; c.width || (!c.width &amp;&amp; xr > c.right ) &amp;&amp; x > c.left &amp;&amp; inTB
 
-			var result = ( (r.bottom || r.top  ) && r.left && r.right ) ||
-				( (r.left || r.right) && r.bottom && r.top   )
+			var result = ( (r.bottom || r.top  ) &amp;&amp; r.left &amp;&amp; r.right ) ||
+				( (r.left || r.right) &amp;&amp; r.bottom &amp;&amp; r.top   )
 
-			if (c.invert && !result || onHTMLhandle) return true
+			if (c.invert &amp;&amp; !result || onHTMLhandle) return true
 			else if( result || onHTMLhandle ) return true
 		}
 		return false
@@ -387,18 +415,18 @@ var makeDRS = function(pane, handle, options){
 		var rMo = b.width + RESIZE_MARGIN_OUTER
 		var bMi = b.height - RESIZE_MARGIN_INNER
 		var bMo = b.height + RESIZE_MARGIN_OUTER
-		inLR = x > dMo && x < rMo
-		inTB = y > dMo && y < bMo
+		inLR = x > dMo &amp;&amp; x &lt; rMo
+		inTB = y > dMo &amp;&amp; y &lt; bMo
 
-		onTopEdge 		= y <= dMi 	&& y > dMo && inLR;
-		onLeftEdge 		= x <= dMi 	&& x > dMo && inTB;
-		onBottomEdge 	= y >= bMi 	&& y < bMo && inLR;
-		onRightEdge 	= x >= rMi	&& x < rMo && inTB;
+		onTopEdge 		= y &lt;= dMi 	&amp;&amp; y > dMo &amp;&amp; inLR;
+		onLeftEdge 		= x &lt;= dMi 	&amp;&amp; x > dMo &amp;&amp; inTB;
+		onBottomEdge 	= y >= bMi 	&amp;&amp; y &lt; bMo &amp;&amp; inLR;
+		onRightEdge 	= x >= rMi	&amp;&amp; x &lt; rMo &amp;&amp; inTB;
 
 		rightScreenEdge 	= b.right > window.innerWidth - SNAP_MARGINS;
 		bottomScreenEdge 	= b.bottom > window.innerHeight - SNAP_MARGINS;
-		topScreenEdge 		= b.top < SNAP_MARGINS;
-		leftScreenEdge 		= b.left < SNAP_MARGINS;
+		topScreenEdge 		= b.top &lt; SNAP_MARGINS;
+		leftScreenEdge 		= b.left &lt; SNAP_MARGINS;
 	}
 
 	function onMove(ee) {
@@ -416,7 +444,7 @@ var makeDRS = function(pane, handle, options){
 		redraw = false;
 
 		// handle resizeing
-		if (clicked && clicked.isResizing) {
+		if (clicked &amp;&amp; clicked.isResizing) {
 			if (clicked.onRightEdge)
 				pane.style.width = Math.max(x, minWidth) + "px";
 			if (clicked.onBottomEdge)
@@ -440,7 +468,7 @@ var makeDRS = function(pane, handle, options){
 			return;
 		}
 
-		if (clicked && clicked.isMoving) {
+		if (clicked &amp;&amp; clicked.isMoving) {
 
 			var bounds = getBounds()
 
@@ -476,9 +504,9 @@ var makeDRS = function(pane, handle, options){
 
 		// style cursor
         var db = document.documentElement || document.body
-		if (onRightEdge && onBottomEdge || onLeftEdge && onTopEdge) {
+		if (onRightEdge &amp;&amp; onBottomEdge || onLeftEdge &amp;&amp; onTopEdge) {
 			db.style.cursor = 'nwse-resize';
-		} else if (onRightEdge && onTopEdge || onBottomEdge && onLeftEdge) {
+		} else if (onRightEdge &amp;&amp; onTopEdge || onBottomEdge &amp;&amp; onLeftEdge) {
 			db.style.cursor = 'nesw-resize';
 		} else if (onRightEdge || onLeftEdge) {
 			db.style.cursor = 'ew-resize';
@@ -496,19 +524,19 @@ var makeDRS = function(pane, handle, options){
 	function onUp(e) {
 		calc(e);
 
-		if (clicked && clicked.isMoving) {
+		if (clicked &amp;&amp; clicked.isMoving) {
 			// Check for Snap
 			var bounds = getBounds()
 			// Snap to bounds
 			if (bounds.length) {
-				// new snap: save preSnap size & bounds then set bounds
+				// new snap: save preSnap size &amp; bounds then set bounds
 				preSnap = {width: b.width, height: b.height};
 				bounds.unshift(pane)
 				preSnap.to = bounds
 				setBounds.apply(this, preSnap.to);
 
 			// Clicked: reduce size and destroy the preSnap state
-			} else if (preSnap && !preSnap.draged) {
+			} else if (preSnap &amp;&amp; !preSnap.draged) {
 
 				var o = RESIZE_MARGIN_INNER
 				preSnap.to[1] += o
@@ -523,7 +551,7 @@ var makeDRS = function(pane, handle, options){
 				preSnap = null;
 			}
 			hintHide();
-		} else if(clicked && clicked.isResizing){
+		} else if(clicked &amp;&amp; clicked.isResizing){
 			// set bounds after resize to make sure they are % as required
 			setBounds(pane)
 		}
@@ -539,14 +567,14 @@ var makeDRS = function(pane, handle, options){
 	pane.addEventListener('click', trippleClick)
 
 	function trippleClick(e) {
-		clicks[2] = clicks[0] && clicks[1] && !clicks[2] ? e.timeStamp : clicks[2]
-		clicks[1] = clicks[0] && !clicks[1] ? e.timeStamp : clicks[1]
+		clicks[2] = clicks[0] &amp;&amp; clicks[1] &amp;&amp; !clicks[2] ? e.timeStamp : clicks[2]
+		clicks[1] = clicks[0] &amp;&amp; !clicks[1] ? e.timeStamp : clicks[1]
 		clicks[0] = !clicks[0] ? e.timeStamp : clicks[0]
 
 		var dif = clicks[2] - clicks[0]
-		if (clicks[2] && dif < 400)
+		if (clicks[2] &amp;&amp; dif &lt; 400)
 			center()
-		if (!clicks[2] && !clicks[3])
+		if (!clicks[2] &amp;&amp; !clicks[3])
 			setTimeout(function () {
 				clicks = [0, 0, 0]
 			}, 500)
@@ -584,3 +612,26 @@ var makeDRS = function(pane, handle, options){
 }
 return {makeDRS:makeDRS}
 }()
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="core.util.DRS.makeDRS.html">makeDRS</a></li></ul><h3>Namespaces</h3><ul><li><a href="core.html">core</a></li><li><a href="core.util.html">util</a></li><li><a href="core.util.DRS.html">DRS</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Thu Sep 08 2016 21:28:13 GMT-0400 (EDT)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

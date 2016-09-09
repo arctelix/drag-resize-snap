@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Home</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Home</h1>
+
+    
+
+
+
+    
+
+
+    <h3> </h3>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <section>
+        <article><h2>drag-resize-snap</h2><h4>Provides the ability to drag, re-size, and snap any html element with pure javascript in only 6.37kb minified!</h4><p>I needed a micro library in pure javascript (no jQuery) for draging,  resizeing, and  snapping.<br>Found a great start <a href="http://codepen.io/zz85/post/resizing-moving-snapping-windows-with-js-css">here</a> and heavily modified it to suite my needs:</p>
+<p>Check out the <a href="http://codepen.io/arctelix/pen/RWVoMv">DEMO</a></p>
+<h4>installation:</h4><p>Manually add drs.js to your project directory or download with Bower:</p>
+<pre class="prettyprint source"><code>bower install drag-resize-snap</code></pre><p>Add drs.js to your project HTML:</p>
+<pre class="prettyprint source"><code>&lt;script src=&quot;static/js/drs.js&quot;>&lt;/script></code></pre><p>Or use gitcdn:</p>
+<pre class="prettyprint source"><code>&lt;script src=&quot;https://cdn.gitcdn.link/repo/arctelix/drag-resize-snap/master/dist/drs.js&quot;>&lt;/script></code></pre><p>NOTE: You can substitute <code>master</code> for a commit hash or version tag in your gitcdn urls</p>
+<pre class="prettyprint source"><code>&lt;script src=&quot;https://cdn.gitcdn.link/repo/arctelix/drag-resize-snap/v0.1.1/dist/drs.js&quot;>&lt;/script></code></pre><h4>Usage:</h4><p>Simple config:</p>
+<pre class="prettyprint source"><code>var pane = document.getElementById('pane')
+var drs = core.util.DRS.makeDRS(pane)</code></pre><p>Advanced config:</p>
+<pre class="prettyprint source"><code>// Create an element to drag, resize, and snap
+var pane = document.getElementById('pane')
+
+// (optional) Create an HTMLElement to use as a drag handle.
+// NOTE: Any child element of pane with class 'drag-area' will be added automatically.
+
+var handleOne = document.getElementById('some-id')
+
+// (optional) create a drag handle by absolutely positioned css rules (bounds).
+// Supply 4 sides or three sides and width or height to make four bounds.
+
+var handleTwo = {
+    left:0,                 // style.left
+    bottom:28,               // style.bottom
+    top:0,                     // style.tip
+    width:33,               // style.width
+    right:null,           // style.right
+    height:null,           // style.height
+    invert: false,        // (false) true: Will invert the bounding box (areas not covered are dragable)
+    hide: false,           // (false) true: Will not append and HTMLelement for the area defined
+}
+
+// Specify options
+
+var options = {
+    snapEdge: 5,           // (5) qty pixels pane needs to be moved beyond window to snap
+    snapFull: 100,          // (100) qty pixels pane needs to be moved beyond window to snap full screen
+    resizeOuterM: 5,     // (5) qty pixels outside pane bounds is dragable
+    resizeInnerM: 8,  // (8) qty pixels inside pane bounds is dragable
+}
+
+// Apply the drag resize snap to your element
+
+var drs = core.util.DRS.makeDRS(pane, [handleOne , handleTwo], options)</code></pre><h4>See docs for more</h4><p>Changes from original source to v0.1.1:</p>
+<ul>
+<li>Added a margin reduce when drag handle is clicked to avoid an un-snapable scenario.</li>
+<li>Zero SNAP_MARGINS contribute to un-snapable scenario. Added some protection for this as well.
+Highly recommend SNAP_MARGIN of at lest 2 (5 is default), it provides same feel with less headache!</li>
+<li>Added tipple click to center and resize, another safe guard for un-snapable scenario.</li>
+<li>Separated DRAG_MARGINS and SNAP_MARGINS, thees need to be independent.</li>
+<li>Reduced code redundancy by adding getBounds().</li>
+<li>Added ability toggle pane bounds by percent of screen with convertUnits() &amp; toggleUnits().</li>
+<li>Allow multiple drag handles and multiple types: (HTMLElement, bounds(css coordinates), and preset strings).</li>
+<li>Accept handle or array of mixed type handles at instantiation.</li>
+<li>Auto detect HTMLElements as handles with class 'drag-area'.</li>
+<li>Automatically create the ghostpane (never any reason to add it manually?).</li>
+<li>Created some api features snapFullScreen(), restorePreSnap(), center().</li>
+<li>Refactored canMove() to allow for customizable handle bounds.</li>
+<li>Automatically append HTML element for bounds handles.</li>
+<li>Refactored getHandleCoords() to allow for custom handle bounds &amp; presets.</li>
+<li>Allow for inner and outer resize margins for better reliability, especially with corners.</li>
+<li>Allow for drag and resize with cursor hints when ele.style.pointer-events = &quot;none&quot;.</li>
+<li>Refactored Calc() to allow for outer margins.</li>
+<li>Other tweaks...</li>
+</ul></article>
+    </section>
+
+
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="core.util.DRS.makeDRS.html">makeDRS</a></li></ul><h3>Namespaces</h3><ul><li><a href="core.html">core</a></li><li><a href="core.util.html">util</a></li><li><a href="core.util.DRS.html">DRS</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Thu Sep 08 2016 21:28:13 GMT-0400 (EDT)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
